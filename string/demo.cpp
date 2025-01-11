@@ -86,9 +86,33 @@ int main(){
   //  cout<< str.substr(2,5)<<endl;
 
    //to_string --> it convert intger to string
-   int x = 12345;
-   string s = to_string(x);
-   cout<<s.length()<<endl;
+//    int x = 12345;
+//    string s = to_string(x);
+//    cout<<s.length()<<endl;
+
+  // string str = "abbcdeffghh";
+  //   int count = 0;
+
+  //   for (int i = 0; i < str.length(); i++) {
+  //       if (i == 0) {
+  //           // First character: compare with the next character
+  //           if (str[i] != str[i + 1]) {
+  //               count++;
+  //           }
+  //       } else if (i == str.length() - 1) {
+  //           // Last character: compare with the previous character
+  //           if (str[i] != str[i - 1]) {
+  //               count++;
+  //           }
+  //       } else {
+  //           // Middle characters: compare with both previous and next characters
+  //           if (str[i] != str[i - 1] && str[i] != str[i + 1]) {
+  //               count++;
+  //           }
+  //       }
+  //   }
+
+  //   cout << "Count of distinct (non-repeating) characters: " << count << endl;
 
 
 
