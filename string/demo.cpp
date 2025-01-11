@@ -77,9 +77,18 @@ int main(){
 //    reverse(str.begin() +2 , str.begin()+5);
 //     cout<<str<<endl;
 
-   string str = "dinesh";
-   reverse(str.begin(),str.begin()+3);
-   cout<<str<<endl;
+//    string str = "dinesh";
+//    reverse(str.begin(),str.begin()+3);
+//    cout<<str<<endl;
+    
+    //string str = "hello world";
+  //str.substr(idx,length)
+  //  cout<< str.substr(2,5)<<endl;
+
+   //to_string --> it convert intger to string
+   int x = 12345;
+   string s = to_string(x);
+   cout<<s.length()<<endl;
 
 
 
