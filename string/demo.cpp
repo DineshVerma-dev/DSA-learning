@@ -4,117 +4,131 @@ using namespace std;
 
 int main(){
     
-    // string s = "dinesh";
-    // cout<<(int)s[6]<<" ";
+    string s = "dinesh";
+    cout<<(int)s[6]<<" ";
 
-    // char ch = '\0';    //--> \0 is special charcter in string append to last of every string
-    // cout<<(int)ch<<" ";
+    char ch = '\0';    //--> \0 is special charcter in string append to last of every string
+    cout<<(int)ch<<" ";
 
-    //    char str[] = {'a','b','\0','c','d'};
-   //     for(char demo : str){
-   //         cout<<demo<<" ";
-   //     }
+       char str[] = {'a','b','\0','c','d'};
+       for(char demo : str){
+           cout<<demo<<" ";
+       }
     
-    // char str[] = "abscd";
-    // for(int i=0; str[i]!='\0';i++){
-    //     cout<<str[i]<<" ";
-    // }
+    char str[] = "abscd";
+    for(int i=0; str[i]!='\0';i++){
+        cout<<str[i]<<" ";
+    }
 
-    // string str = "dinesh verma";
-    // cout<<str.size()<<endl;  // this will return size 12   1 for the space 
-    // cout<<str.length()<<endl;  // this will return size 12   1 for the space 
+    string str = "dinesh verma";
+    cout<<str.size()<<endl;  // this will return size 12   1 for the space 
+    cout<<str.length()<<endl;  // this will return size 12   1 for the space 
 
-    // string s;
-    //  getline(cin,s);
-    // cout<<s<<" ";
+    string s;
+     getline(cin,s);
+    cout<<s<<" ";
 
-    // string str = "dineshkumar verma";
-    // int i=0;
-    // int count = 0;
-    // while(str[i]!='\0'){
-    //     if(str[i]=='a' || str[i]=='e' || str[i] == '0' ||str[i]=='i' || str[i]=='u'){
-    //         count++;
-    //     }
-    //     i++;
-    // }
-    // cout<<count<<endl; //---> once the vowels is counted done count again
+    string str = "dineshkumar verma";
+    int i=0;
+    int count = 0;
+    while(str[i]!='\0'){
+        if(str[i]=='a' || str[i]=='e' || str[i] == '0' ||str[i]=='i' || str[i]=='u'){
+            count++;
+        }
+        i++;
+    }
+    cout<<count<<endl; //---> once the vowels is counted done count again
 
-    //updation of single char;
-    // string str = "raghav";
-    // cout<<str<<endl;
-    // str[1] = 's';
-    // cout<<str<<endl;
+    updation of single char;
+    string str = "raghav";
+    cout<<str<<endl;
+    str[1] = 's';
+    cout<<str<<endl;
     
-    // string str;
-    // getline(cin,str);
-    // for(int i=0; str[i]!='\0';i+=2){
-    //     str[i] = 'a';
-    // }
-    // cout<<str<<" ";
+    string str;
+    getline(cin,str);
+    for(int i=0; str[i]!='\0';i+=2){
+        str[i] = 'a';
+    }
+    cout<<str<<" ";
 
    
 
-     // string str = "ached";
-    // cout << str << endl; // Output: ached
+     string str = "ached";
+    cout << str << endl; // Output: ached
 
-    // str.push_back('e');  // Adds 'e' to the end of the string
-    // cout << str << endl; // Output: achede
+    str.push_back('e');  // Adds 'e' to the end of the string
+    cout << str << endl; // Output: achede
 
-    // str.pop_back();      // Removes the last character (no argument needed)
-    // cout << str << endl; // Output: ached
+    str.pop_back();      // Removes the last character (no argument needed)
+    cout << str << endl; // Output: ached
  
-//  + operator --> used to append the string
-    // string s = "abs";
-    // cout<<s<<endl;
-    // string t = "def";
-    // s = s + t;
-    // s = "debish" + s;
-    // cout<<s<<endl;
+ + operator --> used to append the string
+    string s = "abs";
+    cout<<s<<endl;
+    string t = "def";
+    s = s + t;
+    s = "debish" + s;
+    cout<<s<<endl;
 
-//    string str = "dineshverma";
-//    reverse(str.begin() , str.end());
-//     cout<<str<<endl;
-//    reverse(str.begin() +2 , str.begin()+5);
-//     cout<<str<<endl;
+   string str = "dineshverma";
+   reverse(str.begin() , str.end());
+    cout<<str<<endl;
+   reverse(str.begin() +2 , str.begin()+5);
+    cout<<str<<endl;
 
-//    string str = "dinesh";
-//    reverse(str.begin(),str.begin()+3);
-//    cout<<str<<endl;
+   string str = "dinesh";
+   reverse(str.begin(),str.begin()+3);
+   cout<<str<<endl;
     
-    //string str = "hello world";
-  //str.substr(idx,length)
-  //  cout<< str.substr(2,5)<<endl;
+    string str = "hello world";
+  str.substr(idx,length)
+   cout<< str.substr(2,5)<<endl;
 
-   //to_string --> it convert intger to string
-//    int x = 12345;
-//    string s = to_string(x);
-//    cout<<s.length()<<endl;
+   to_string --> it convert intger to string
+   int x = 12345;
+   string s = to_string(x);
+   cout<<s.length()<<endl;
 
-  // string str = "abbcdeffghh";
-  //   int count = 0;
+  string str = "abbcdeffghh";
+    int count = 0;
 
-  //   for (int i = 0; i < str.length(); i++) {
-  //       if (i == 0) {
-  //           // First character: compare with the next character
-  //           if (str[i] != str[i + 1]) {
-  //               count++;
-  //           }
-  //       } else if (i == str.length() - 1) {
-  //           // Last character: compare with the previous character
-  //           if (str[i] != str[i - 1]) {
-  //               count++;
-  //           }
-  //       } else {
-  //           // Middle characters: compare with both previous and next characters
-  //           if (str[i] != str[i - 1] && str[i] != str[i + 1]) {
-  //               count++;
-  //           }
-  //       }
-  //   }
+    for (int i = 0; i < str.length(); i++) {
+      if(n==1){
+        break;
+      }
+        if (i == 0) {
+            if (str[i] != str[i + 1]) {
+                count++;
+            }
+        } else if (i == str.length() - 1) {
+            if (str[i] != str[i - 1]) {
+                count++;
+            }
+        } else {
+            if (str[i] != str[i - 1] && str[i] != str[i + 1]) {
+                count++;
+            }
+        }
+    }
 
-  //   cout << "Count of distinct (non-repeating) characters: " << count << endl;
+    cout << "Count of distinct (non-repeating) characters: " << count << endl;
 
+   string s;
+   getline(cin,s);
+   sort(s.begin(),s.end());
+   cout<<s;
 
+  string s = "nitin";
+  string t = "tinin";
+  sort(s.begin(),s.end());
+  sort(t.begin(),t.end());
+  if(s==t) cout<<true;
+  else cout<<false;
+
+    
+ 
+    
 
     return 0;
 }
