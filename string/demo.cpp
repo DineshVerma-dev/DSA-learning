@@ -235,7 +235,86 @@ int main(){
     //     cout << "Error: " << e.what() << endl;
     // }
 
+   //this is mine approach
+  // string arr[5] = {"001233333", "456", "789", "101112", "131415"};
+  // vector <int> store ;
+  // for(int i=0; i<5; i++){
+  //   long long x = stoll(arr[i]);
+  //   store.push_back(x);
+  //  }
+  // sort(store.begin(),store.end());
+  // cout<<store[4]<<endl;
+  
+  //question is return longest number
+  // string arr[5] = {"001233333", "456", "789", "101112", "131415"};
+  // int max =stoi(arr[0]);
+  // string maxs = arr[0];
+  // for(int i=1; i<5; i++){
+  //   int x = stoi(arr[i]);
+  //   if(x>max) {
+  //     max = x;
+  //     maxs = arr[i];
+  //   }
+  // }
+  // cout<<max<<" "<<maxs;
+
+
+  //longest common prefix
+  // vector<string> strs = {"flower", "flow", "flight"};
+  //   int n = strs.size();
+    
+  //   if (n == 0) {
+  //       cout << "Longest Common Prefix: " << "" << endl;
+  //       return 0;
+  //   }
+  //   if (n == 1) {
+  //       cout << "Longest Common Prefix: " << strs[0] << endl;
+  //       return 0;
+  //   }
+  //   sort(strs.begin(), strs.end());
+  //   string firstElement = strs[0];
+  //   string lastElement = strs[n - 1];
+  //   string prefix = "";
+
+  //   for (int i = 0; i < min(firstElement.length(), lastElement.length()); i++) {
+  //       if (firstElement[i] == lastElement[i]) {
+  //           prefix += firstElement[i];
+  //       } else {
+  //           break; 
+  //       }
+  //   }
+
+  //   cout << "Longest Common Prefix: " << prefix << endl; 
+
+      
+      // given a two string s and t determine if they are isomorphic  leetcode 205
+
+  //    string s = "egg", t = "add";
+  //  bool isIsomorphic(string s, string t) {
+  //     if(s.size()!=t.length()) return false;
+  //    vector <int> v(150,1000);
+  //    for(int i=0; i<s.length();i++){
+  //     int idx = (int)s[i];
+  //     if(v[idx]==1000) v[idx] = s[i] - t[i];
+  //     else if(v[idx]!=(s[i]-t[i])) return false;
+  //    }
+  //    //emptying the vector
+  //    for(int i=0; i<150; i++)
+  //     v[i] = 1000;
+  //    for(int i=0; i<t.length();i++){
+  //     int idx = (int)t[i];
+  //     if(v[idx]==1000) v[idx] = t[i] - s[i];
+  //     else if(v[idx]!=(t[i]-s[i])) return false;
+  //    }
+  //    return true;
+  //   }
+  
+
+     
+      
  
+
+
   
 
     return 0;

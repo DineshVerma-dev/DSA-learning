@@ -1,3 +1,3 @@
- // for(char demo : str){
-    //     cout<<demo<<" ";
-    // }
+sort(s.begin(),s.end());
+    //  sort(t.begin(),t.end());
+    //  cout<<t <<" " <<s<<" ";
