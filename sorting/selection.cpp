@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
    
-  int arr[] = {5,3,1,4,2};
+   int arr[] = {5,3,1,4,2};
   int minIndex = 0;
   int n=4;
   while(n){
