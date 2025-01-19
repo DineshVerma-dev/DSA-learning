@@ -43,7 +43,7 @@ int main() {
   // }
   // for (int ele : arr) {
   //   cout << ele << " ";
-  // }
+  //  }
 
 
   int   arr[] = {5, 30, -1, 4, 2};
