@@ -46,7 +46,7 @@ int main() {
   // }
 
 
-   int arr[] = {5, 30, -1, 4, 2};
+   int   arr[] = {5, 30, -1, 4, 2};
   int n = 5;
   for (int ele : arr) {
     cout << ele << " ";
