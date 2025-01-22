@@ -55,28 +55,79 @@ int main (){
     //     cout<<arr[i]<<" ";
     // }
  ///////////////////////////wthout using extra space
-    int arr[] = {19,12,23,8,16};
-    int n = 5;
-    
-    int x  = 0 ;
-    for(int i=0; i<n; i++){
-        int min = INT_MAX;
-        int mindx = -1;
-        for(int j=0; j<n ; j++){
-            if(arr[j]<=0) continue;
-            else {
-                if (min>arr[j]){
-                    min = arr[j];
-                    mindx = j;
-                }
-            }
-        }
-        arr[mindx] = -x ;
-        x++;
-    }
 
-    for(int i=0; i<n ;i++){
-        cout<<arr[i]<<" ";
-    }
+    // int arr[] = {19,12,23,8,16};
+    // int n = 5;
+    // int x  = 0 ;
+    // for(int i=0; i<n; i++){
+    //     int min = INT_MAX;
+    //     int mindx = -1;
+    //     for(int j=0; j<n ; j++){
+    //         if(arr[j]<=0) continue;
+    //         else {
+    //             if (min>arr[j]){
+    //                 min = arr[j];
+    //                 mindx = j;
+    //             }
+    //         }
+    //     }
+    //     arr[mindx] = -x ;
+    //     x++;
+    // }
+
+    // for(int i=0; i<n ;i++){
+    //     cout<<arr[i]<<" ";
+    // }
+
+
+   //leetcode cookie question 455
+    //    sort(g.begin(),g.end());
+    //    sort(s.begin(),s.end());
+    //    int count = 0 ;
+    //    int mn = min(g.size(),s.size());
+    //     for(int i=0;i<mn; i++){
+           
+    //         int j = 
+    //         if(s[i]>=g[j]) count++;
+    //     }
+    //     return count++;
+
+    // sort(g.begin(),g.end());
+    //    sort(s.begin(),s.end());
+    //    int count = 0 ;
+    //   int idx = -1;
+      
+    //     for(int i=0;i<s.size(); i++){
+    //         if(s[i]>=g[0]) {
+                //    idx = i;
+                //   break;
+                //  }
+              
+    //     }
+    // if(idx == -1) return 0;
+    // int i=0;
+    // int j =idx;
+    // while(i<g.size()&&j<s.size()){
+    //     if(s[i]>=g[j]) count ++;
+    //     i++;
+    //     j++;
+    // }
+    //     return count++;
+
+    // int findContentChildren(vector<int>& g, vector<int>& s) {
+    //    sort(g.begin(),g.end());
+    //    sort(s.begin(),s.end());
+    //    int count = 0 ;
+    //    int i=0;
+    //    int j=0;
+    //    while(i<g.size()&&j<s.size()){
+    //     if(s[j]>=g[i]){
+    //         count++;
+    //         i++;
+    //         j++;
+    //     } else j++;
+    //    }
+    //     return count++;
+    // }
     return 0;
 }

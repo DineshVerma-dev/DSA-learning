@@ -290,7 +290,7 @@ int main(){
       given a two string s and t determine if they are isomorphic  leetcode 205
 
      string s = "egg", t = "add";
-   bool isIsomorphic(string s, string t) {
+     bool isIsomorphic(string s, string t) {
       if(s.size()!=t.length()) return false;
      vector <int> v(150,1000);
      for(int i=0; i<s.length();i++){
