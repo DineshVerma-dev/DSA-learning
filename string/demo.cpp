@@ -311,7 +311,13 @@ int main(){
   
        
      
-      
+      string c = "abdc";
+      string v = "aydc";
+      cout<<s.compare(t);
+
+      // 0 if s==t
+      // +ve if s>t
+      // -ve if s<t
  
 
 
