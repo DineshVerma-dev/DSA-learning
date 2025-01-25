@@ -87,7 +87,7 @@ int main (){
        int mn = min(g.size(),s.size());
         for(int i=0;i<mn; i++){
            
-            int j = 
+            int j = i
             if(s[i]>=g[j]) count++;
         }
         return count++;
