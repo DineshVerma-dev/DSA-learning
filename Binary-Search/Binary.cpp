@@ -121,7 +121,7 @@ if(flag==false) cout<<-1;
 
 /****************find the smallest missing element in sorted array************* */
   
-
+    
 
 
     return 0;
