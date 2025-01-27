@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+
+
+
 int main() {
     /***********  Binary Search  **************/
    
@@ -119,9 +123,59 @@ int main() {
   }
 if(flag==false) cout<<-1;
 
+ //**********last Ocuurence of the given number **************// */
+
+ ///////********leetcode 34 problem number ***********///////// */
+
+
+ ///////********leetcode 35 problem number ***********///////// */
+
+
+ 
 /****************find the smallest missing element in sorted array************* */
   
-    
+    /*using linear search*/
+
+vector<int> arr = {0,1,2,3,4,8,9,10};
+for(int i = 0; i < arr.size(); i++) {
+    if(arr[i] != i) {
+        cout << i << " "; //this will print the missing element in arrays  
+    }
+}
+
+   ////using binary Search  ///
+
+   
+   vector <int> arr = {0,1,3,4,6,8,9,10};
+
+   int lo = 0;
+   int hi = arr.size() - 1;
+   int res = -1;
+   while(lo<=hi){
+       int mid = lo + (hi-lo)/2;
+     if(mid == arr[mid]){
+       lo = mid +1;
+     } else {
+         res = mid;
+        hi = mid -1;
+     }
+   }
+   cout <<res<<endl;
+ 
+    /***********************  leetcode 69  ************************ */
+
+     int mySqrt(int x) {
+        int lo = 0; 
+        int hi = x;
+        while(lo<=hi) {
+            long long mid = lo + (hi-lo)/2;
+            if(mid*mid == x) return mid;
+            if(mid*mid < x ) lo = mid + 1;
+            else hi = mid - 1;
+
+        }
+        return hi;
+    }
 
 
     return 0;
