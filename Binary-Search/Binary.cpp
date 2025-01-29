@@ -124,7 +124,26 @@ int main() {
 if(flag==false) cout<<-1;
 
  //**********last Ocuurence of the given number **************// */
-
+vector <int> nums = {1,2,2,3,3,3,3,3,4,4,5,8,9};
+  int x = 4;
+  int lo = 0;
+  int hi = nums.size() - 1;
+  bool flag = false;
+  while(lo<=hi){
+    int mid = lo + (hi-lo)/2;
+    if(nums[mid]==x){ 
+        if(nums[mid+1]!=x){
+            flag = true;
+            cout<<mid<<" ";
+            break;
+        } else {
+            lo = mid + 1;
+        }
+        
+    } else if(nums[mid] < x) lo = mid +1;
+    else hi = mid -1;
+  }
+if(flag==false) cout<<-1;
  ///////********leetcode 34 problem number ***********///////// */
 
 
@@ -154,7 +173,7 @@ for(int i = 0; i < arr.size(); i++) {
    while(lo<=hi){
        int mid = lo + (hi-lo)/2;
      if(mid == arr[mid]){
-       lo = mid +1;
+       lo = mid + 1;
      } else {
          res = mid;
         hi = mid -1;
@@ -176,6 +195,7 @@ for(int i = 0; i < arr.size(); i++) {
         }
         return hi;
     }
+
 
 
     return 0;
