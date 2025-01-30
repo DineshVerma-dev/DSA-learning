@@ -196,8 +196,77 @@ for(int i = 0; i < arr.size(); i++) {
         return hi;
     }
 
+vector<vector<int>> arr = {{0,0,0,0,1,1}, {0,0,1,1,1,1}, {0,0,0,1,1,1}, {0,1,1,1,1,1}, {0,0,0,1,1,1}};
+ vector<vector<int>> arr = {
+    {0, 1, 1, 1},
+    {0, 0, 0, 0},
+    {1, 1, 1, 1},
+    {0, 0, 0, 1},
+    {0, 1, 1, 1},
+    {0, 0, 0, 1},
+    {0, 0, 0, 1}
+};
+ int x = 1;
+ int n = arr.size();
+ int m = arr[0].size();
+for(int i = 0; i < arr.size(); i++) {
+  for(int j = 0; j < m; j++) {
+    cout << arr[i][j] << " ";
+  }
+  cout << endl;
+}
 
 
+ vector <int> ans;
+   for(int i=0 ;i<n ;i++){
+    int lo = 0;
+    int hi = m-1;
+    int firstIdx = -1;
+    while(lo<=hi){
+      int mid = lo + (hi-lo)/2;
+      if (arr[i][mid] == x) {
+         if(mid == 0 || arr[i][mid-1] != x){
+          firstIdx = mid;
+          break;
+         } else hi = mid -1;
+      }
+      else if(arr[i][mid] < x) lo = mid + 1;
+      else hi = mid - 1;
+    }
+    if(firstIdx != -1) ans.push_back(m - firstIdx);
+    else ans.push_back(0);
+   }
+ 
+  for(int i=0;i<ans.size(); i++){
+    cout<<ans[i]<<" ";
+  }
+ 
+   cout<<endl;
+   int max = -1;
+   int maxIdx = -1;
+   for( int i=0; i<ans.size(); i++){
+     if(max < ans[i]){
+         max = ans[i];
+         maxIdx = i;
+     }
+ } 
+  cout << maxIdx;
+
+  /* find the one repeated number*/
+  vector <int> arr = {1,2,3,4,4,5,6,7};
+  int lo = 0;
+  int hi = arr.size() - 1;
+  while(lo<=hi){
+    int mid = lo +(hi-lo)/2;
+    if(arr[mid] == mid + 1) lo = mid + 1;
+    if(arr[mid] == mid){
+      if(arr[mid] == arr[mid-1]){
+        cout<<arr[mid];
+        break;
+      }
+      else hi = mid -1;
+    }
+  }
     return 0;
 }
 
