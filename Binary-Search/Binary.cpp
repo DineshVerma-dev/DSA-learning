@@ -407,8 +407,87 @@ for(int i = 0; i < arr.size(); i++) {
         return v;
     }
  
-  /////*leetcode 633 find sumof the square :  */
+  ///*leetcode 633 find sumof the square :  */
 
+  bool isperfectSquare(long long n){
+      long long root = sqrt(n);
+      long long v =root*root;
+      if(v == n) return true;
+      else return false;
+    }
+    bool judgeSquareSum(int c) {
+        long long x = 0;
+        long long y = c;
+        while(x<=y){
+            if(isperfectSquare(x) && isperfectSquare(y) ) return true;
+           else if(!isperfectSquare(y)){
+            y = (int)sqrt(y)*(int)sqrt(y);
+            x = c-y;
+           } else {
+            x = ((int)sqrt(x) +1)*((int)sqrt(x) +1);
+            y = c-x;
+           }
+        }
+        return false;
+    }
+
+  /binary serach on infinite array
+  In this first we have to define the boundary of the low and high 
+  and then apply binary search in this low --> high range
+  
+  lo = 0; high = 1;
+   while(arr[hi] < target){
+    low = high;
+    high = 2*high;
+   }
+   
+   leetcode 74 
+   leetcode 81
+   leetcode 1011 ship the weights in Days
+
+   class Solution {
+    public:
+       bool check(int mid,vector<int>& weights,int days){
+        // 3,2,2,4,1,4  days = 3 mid =
+        int n = weights.size();
+        int m = mid;
+        int count = 1;
+        for(int i=0;i<n;i++){
+          if(m>=weights[i]){
+            m -= weights[i];
+          } else {
+            count++;
+            m = mid;
+            m -= weights[i];
+          }
+        }
+        if(count>days) return false;
+        else return true;
+       }
+        int shipWithinDays(vector<int>& weights, int days) {
+            int n = weights.size();
+            int max = INT_MIN;
+            int sum = 0;
+            for (int i = 0; i < n; i++) {
+                if (weights[i] > max) {
+                    max = weights[i];
+                }
+                sum += weights[i];
+            }
+            int low = max;
+            int high = sum;
+            int mincapacity = sum;
+            while(low<=high){
+                int mid = low + (high-low)/2;
+                if(check(mid,weights,days)){
+                    mincapacity = mid;
+                    high = mid - 1;
+                } else low = mid + 1;
+            }
+            return mincapacity;
+        }
+    }; ///time complexity --> O(n*log(sum-max))
+   
     return 0;
 }
 
