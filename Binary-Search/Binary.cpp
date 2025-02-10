@@ -488,13 +488,15 @@ for(int i = 0; i < arr.size(); i++) {
         }
     }; ///time complexity --> O(nlog(sum-max))
    
-
+ 
+    ///leetcode koko eating banana
     class Solution {
         public:
              bool check(int mid , vector<int>& piles, int h){
                 int speed  = mid;
                 int count = 0; 
                 for(int i=0; i<piles.size(); i++){
+                    if(count>h) return false;
                    if(speed>=piles[i]) count++;
                    else if(piles[i]%speed==0) count+=piles[i]/speed;
                    else count+=piles[i]/speed + 1;
