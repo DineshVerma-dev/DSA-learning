@@ -496,7 +496,7 @@ for(int i = 0; i < arr.size(); i++) {
                 int count = 0; 
                 for(int i=0; i<piles.size(); i++){
                    if(speed>=piles[i]) count++;
-                   else if(piles[i]%speed) count+=piles[i]/speed;
+                   else if(piles[i]%speed==0) count+=piles[i]/speed;
                    else count+=piles[i]/speed + 1;
 
                 }
