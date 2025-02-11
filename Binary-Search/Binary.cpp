@@ -441,9 +441,9 @@ for(int i = 0; i < arr.size(); i++) {
     high = 2*high;
    }
    
-   leetcode 74 
-   leetcode 81
-   leetcode 1011 ship the weights in Days
+//    leetcode 74 
+//    leetcode 81
+//    leetcode 1011 ship the weights in Days
 
    class Solution {
     public:
@@ -525,6 +525,10 @@ for(int i = 0; i < arr.size(); i++) {
                 return ans;
             }
         };
+
+
+        //leetcode 2187
+
     return 0;
 }
 
