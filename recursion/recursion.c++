@@ -76,7 +76,97 @@ void zigzag(int x){
     zigzag(x-1);
    cout<<x<<" ";
 }
+
+int tower(int n ,char a ,char b ,char c){
+    if(n==0) return 0;
+    tower(n-1 , a , c , b);
+    cout<<a<<" -> "<<c<<endl;
+    tower(n-1, b , a , c );
+}
+
+//find minmium and max using recursion 
+void max1(int arr[] , int idx, int max,int size){
+  if(idx == size) {
+    cout<<max<<" ";
+    return;
+  }  
+  if(max < arr[idx]) max = arr[idx];
+  max1(arr , idx + 1 ,max ,size);
+}
+
+int big(int arr[] , int idx , int n){
+    if(idx == n) return INT_MIN;
+    return max(arr[idx],big(arr,idx + 1 ,n));
+}
+
+void removeChar(string ans , string original){
+    if(original.length()==0) {
+        cout<<ans<<" ";
+        return;
+    }
+    char ch = original[0];
+    if(ch=='a' || ch == 'A') removeChar(ans,original.substr(1));
+    else removeChar(ans+ch,original.substr(1));
+}
+
+void removeChars(string ans , string original ,int idx){
+    if(original.length()==idx) {
+        cout<<ans<<" ";
+        return;
+    }
+    char ch = original[idx];
+    if(ch=='a' || ch == 'A') removeChars(ans,original,idx+1);
+    else removeChars(ans+ch,original,idx+1);
+}
+
+void printSubset1(string ans ,string original){
+    if(original == ""){
+        cout<<ans<<endl;
+        return;
+    }
+    char ch = original[0];
+    printSubset1(ans,original.substr(1));
+    printSubset1(ans+ch,original.substr(1));
+}
+
+void printSubset(string ans ,string original ,int idx){
+    if(original.size() == idx){
+        cout<<ans<<endl;
+        return;
+    }
+    char ch = original[idx];
+    printSubset(ans,original,idx+1);
+    printSubset(ans+ch,original,idx+1);
+}
+
+void SubArr(vector<int>& nums ,int idx , int size ,vector<int> ans){
+    if(idx == size){
+        for(int ele : ans){
+            cout<<ele<<" ";
+        }
+        cout<<endl;
+        return;
+    }
+   SubArr(nums,idx+1,size,ans);
+   ans.push_back(nums[idx]);
+   SubArr(nums,idx+1,size,ans);
+}
 int main(){
+
+    // vector<int> nums = {1,2,3};
+    //  vector<int> ans;
+    // SubArr1(nums, 0, 3, ans);
+    // cout << endl;
+    
+    // string str = "abc";
+    // printSubset("",str,0);
+
+    // string str = "Abhishek tiwari";
+    // removeChars("",str,0);
+    // int arr[] = {1,2,6,5,9,22,3};
+    //min(arr,0,INT_MIN,7);
+    //cout<<big(arr , 0 ,7)<<endl;
+
     // cout<<maze(1,1,3,3)<<endl;
     //  cout<<maze2(3,3)<<endl;
     //  printpath(1,1,3,3,"");
@@ -90,7 +180,8 @@ int main(){
    // cout<<stair(5)<<endl;
 
    //pip(2);
-   zigzag(4);
+   //zigzag(4);
+   //tower(4 ,'A' , 'B' , 'C');
    
     return 0;
 }
