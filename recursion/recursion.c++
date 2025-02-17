@@ -129,15 +129,6 @@ void printSubset1(string ans ,string original){
     printSubset1(ans+ch,original.substr(1));
 }
 
-void printSubset(string ans ,string original ,int idx){
-    if(original.size() == idx){
-        cout<<ans<<endl;
-        return;
-    }
-    char ch = original[idx];
-    printSubset(ans,original,idx+1);
-    printSubset(ans+ch,original,idx+1);
-}
 
 void SubArr(vector<int>& nums ,int idx , int size ,vector<int> ans){
     if(idx == size){
@@ -151,15 +142,77 @@ void SubArr(vector<int>& nums ,int idx , int size ,vector<int> ans){
    ans.push_back(nums[idx]);
    SubArr(nums,idx+1,size,ans);
 }
+
+//print all the powersert of the string given  (contains repeated elements);
+void printSubset(string ans, string original, bool flag) {
+    if (original.empty()) {
+        cout << ans << endl;
+        return;
+    }
+
+    char ch = original[0];
+    if(original.length() == 1){
+        if (flag == true) printSubset(ans + ch, original.substr(1), true);  
+        printSubset(ans, original.substr(1), true); 
+        return;
+    }
+    char dh = original[1];
+    if (ch == dh) {  
+        if (flag == true) printSubset(ans + ch, original.substr(1), true);  
+        printSubset(ans, original.substr(1), false);  
+    } else {
+       if(flag == true) printSubset(ans + ch, original.substr(1), true);
+        printSubset(ans, original.substr(1), true);
+    }
+}
+
+//print all the squence increasing seq of length k from the n natural number which is given 
+
+void SubArrK(vector<int>& nums ,int idx , int size ,vector<int> ans ,int k){
+    if(idx == size){
+        if( k == ans.size()){
+            for(int ele : ans){
+                cout<<ele<<" ";
+            }
+            cout<<endl;
+        }
+        return;
+    }
+    if(ans.size() + (size-idx) < k) return;
+    SubArrK(nums,idx+1,size,ans,k);
+    ans.push_back(nums[idx]);
+    SubArrK(nums,idx+1,size,ans,k);
+}
+
+// permutation of string
+void permutation(string ans , string original){
+    if(original == ""){
+        cout<<ans<<endl;
+        return;
+    }
+    for(int i=0; i<original.length() ; i++){
+      char ch =  original[i];
+      string left = original.substr(0,i);
+      string right =  original.substr(i+1) ;
+      permutation(ans+ch , left+right);
+    }
+}
 int main(){
 
-    // vector<int> nums = {1,2,3};
-    //  vector<int> ans;
-    // SubArr1(nums, 0, 3, ans);
+     string str = "abc";
+     permutation("",str);
+    //  string left = str.substr(0,2);
+    //  cout<<left<<endl;
+    //  string right =  str.substr(2+1) ;
+    //  cout<<right<<endl;
+
+    //  vector<int> nums = {1,2,3,4,5};
+    //   vector<int> ans;
+    //  SubArrK(nums, 0, 5, ans ,3);
     // cout << endl;
     
-    // string str = "abc";
-    // printSubset("",str,0);
+    //string str = "aaabbbbbb";
+    //printSubset("",str,true);
 
     // string str = "Abhishek tiwari";
     // removeChars("",str,0);
