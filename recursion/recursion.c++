@@ -197,10 +197,16 @@ void permutation(string ans , string original){
       permutation(ans+ch , left+right);
     }
 }
+
+
 int main(){
+ 
+     
+    
 
      string str = "abc";
      permutation("",str);
+
     //  string left = str.substr(0,2);
     //  cout<<left<<endl;
     //  string right =  str.substr(2+1) ;
