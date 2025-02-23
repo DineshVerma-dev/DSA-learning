@@ -66,21 +66,37 @@ void parenthesis(string s, int opening , int closing ,int n){
 }
 
 //leetcode  779 
-void grammer(string s, int n){
-    if(s.size() == n){
-        cout<<s<<" ";
-        cout<<endl;
-        return;
+int kthGrammar(int n, int k) {
+    if(n==1) return 0;
+    if(k%2==0){ // flip, k/2
+       int prevAns = kthGrammar(n-1,k/2);
+       if(prevAns == 0) return 1;
+       else return 0;
+    } else { //k is odd // same , k/2+1
+       return kthGrammar(n-1,k/2+1);
     }
-    if(s.back() == '0'){
-        grammer(s+"01",n);
-    } else grammer(s+"10",n);
-   
-    
+}
+
+//leetcode 38
+string countAndSay(int n) {
+    if(n == 1) return "1";
+    string prev = countAndSay(n - 1);
+    string result = "";
+    int count = 1;
+    for(int i = 1; i < prev.size(); i++) {
+        if(prev[i] == prev[i - 1]) {
+            count++;
+        } else {
+            result += to_string(count) + prev[i - 1];
+            count = 1;
+        }
+    }
+    result += to_string(count) + prev.back();
+    return result;
 }
 int main(){
- 
-    grammer("0",3);
+    cout<<countAndSay(5);
+   // kthGrammar("0",3);
 
        //parenthesis("",0,0,3);
         

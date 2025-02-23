@@ -204,7 +204,7 @@ int main(){
      
     
 
-     string str = "abc";
+     string str = "123";
      permutation("",str);
 
     //  string left = str.substr(0,2);
