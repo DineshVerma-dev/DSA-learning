@@ -29,8 +29,9 @@ void printlevel(Node* root, int curr, int level){
         cout<< root->val;
         return;
     } 
-    printlevel(root->left,curr+1,level);
+   
     printlevel(root->right,curr+1,level);
+     printlevel(root->left,curr+1,level);
 }
 
 void LevelOrderTraversal(Node* root){
