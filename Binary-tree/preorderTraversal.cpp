@@ -18,6 +18,16 @@ void preorderTraversal(Node* root){
     preorderTraversal(root->left);
     preorderTraversal(root->right);
 }
+
+void printlevel(Node* root, int x){
+    if(root == NULL) return ;
+    if(x == 3){
+        cout<<root->val;
+        return;
+    } 
+    printlevel(root->left,x+1);
+    printlevel(root->right,x+1);
+}
 int main(){
     Node* a = new Node(1); // this is my root node
     Node* b = new Node(2);
@@ -26,7 +36,7 @@ int main(){
     Node* e = new Node(5);
     Node* f = new Node(6);
     Node* g = new Node(7);
-    Node* h = new Node(11);
+    
 
     a->left = b;
     a->right = c;
@@ -34,9 +44,12 @@ int main(){
     b->right = e;
     c->left  = f;
     c->right = g;
-    g->right = h;
    
-   preorderTraversal(a);
+   
+   //preorderTraversal(a);
+   //printlevel(a,1);
+  // printlevel(a,2);
+   printlevel(a,1);
     
     return 0;
 }
