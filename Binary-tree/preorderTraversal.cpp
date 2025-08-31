@@ -19,14 +19,26 @@ void preorderTraversal(Node* root){
     preorderTraversal(root->right);
 }
 
-void printlevel(Node* root, int x){
+int findlevel(Node* root){
+    if(root == NULL) return 0;
+    return 1 + max(findlevel(root->left) , findlevel(root->right));
+}
+void printlevel(Node* root, int curr, int level){
     if(root == NULL) return ;
-    if(x == 3){
-        cout<<root->val;
+    if(curr == level){
+        cout<< root->val;
         return;
     } 
-    printlevel(root->left,x+1);
-    printlevel(root->right,x+1);
+    printlevel(root->left,curr+1,level);
+    printlevel(root->right,curr+1,level);
+}
+
+void LevelOrderTraversal(Node* root){
+    int n = findlevel(root);
+    for(int i=1; i<=n; i++){
+        printlevel(root,1,i);
+        cout<<endl;
+    }
 }
 int main(){
     Node* a = new Node(1); // this is my root node
@@ -48,8 +60,10 @@ int main(){
    
    //preorderTraversal(a);
    //printlevel(a,1);
-  // printlevel(a,2);
-   printlevel(a,1);
+   // printlevel(a,2);
+   //printlevel(a,1);
+
+   LevelOrderTraversal(a);
     
     return 0;
 }
