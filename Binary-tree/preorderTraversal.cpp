@@ -41,6 +41,19 @@ void LevelOrderTraversal(Node* root){
         cout<<endl;
     }
 }
+
+void levelOrderQueue(Node* root){ // BFS
+    queue<Node*> q;
+    q.push(root);
+    while(q.size() > 0){
+        Node* temp = q.front();
+        q.pop();
+        cout<<temp->val<<" ";
+        if(temp->left!=NULL) q.push(temp->left);
+        if(temp->right!=NULL) q.push(temp->right);
+    }
+    cout<<endl;
+}
 int main(){
     Node* a = new Node(1); // this is my root node
     Node* b = new Node(2);
@@ -64,7 +77,8 @@ int main(){
    // printlevel(a,2);
    //printlevel(a,1);
 
-   LevelOrderTraversal(a);
+   //LevelOrderTraversal(a);
+   levelOrderQueue(a);
     
     return 0;
 }
