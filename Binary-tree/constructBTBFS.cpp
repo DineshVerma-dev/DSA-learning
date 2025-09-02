@@ -53,6 +53,24 @@ void iteravtivePostOrderTraversal(Node*root){
     }
     cout<<endl;
 }
+
+void iteravtiveInOrderTraversal(Node* root){  // This is the LVR (left root right )
+    stack<Node*> st;
+    Node* node = root;
+    while(st.size()>0 || node!=NULL) {
+       if(node) {
+           st.push(node);
+           node = node->left;
+       }  else {
+           if(!st.empty()) {
+               Node* temp = st.top();
+               st.pop();
+               cout<<temp->val<<" ";
+               node = temp->right;
+           }
+       }
+    }
+}
 Node * construct(int arr[],int n){
     queue<Node*> q;
     Node* root = new Node(arr[0]);
@@ -87,8 +105,9 @@ int main() {
      int n = sizeof(arr)/sizeof(arr[0]);
        Node* root = construct(arr,n);
        //levelOrderQueue(root);
-       itervativePreOrderTraversal(root);
-       iteravtivePostOrderTraversal(root);
+       //itervativePreOrderTraversal(root);
+       //iteravtivePostOrderTraversal(root);
+       iteravtiveInOrderTraversal(root);
 
    return 0;
 }
