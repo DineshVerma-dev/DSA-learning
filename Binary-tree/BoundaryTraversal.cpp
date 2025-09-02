@@ -17,6 +17,7 @@ int findlevel(Node* root){
     if(root == NULL) return 0;
     return 1 + max(findlevel(root->left) , findlevel(root->right));
 }
+
 void printlevel(Node* root, int curr, int level){
     if(root == NULL) return ;
     if(curr == level){
@@ -53,8 +54,8 @@ Node * construct(int arr[],int n){
      if(j!=n && arr[j]!=INT_MIN) r = new Node(arr[j]);
      else r = NULL;
 
-     temp->left= l;
-     temp->right=r;
+     temp->left = l;
+     temp->right =r;
 
      if(l!=NULL) q.push(l);
      if(r!=NULL) q.push(r);
