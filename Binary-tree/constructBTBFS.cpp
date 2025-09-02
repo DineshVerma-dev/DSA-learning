@@ -26,6 +26,33 @@ void levelOrderQueue(Node* root){ // BFS
     cout<<endl;
 }
 
+void itervativePreOrderTraversal(Node* root){
+    stack<Node*> st;
+   if(root!=NULL) st.push(root);
+    while(st.size()>0){
+        Node* temp = st.top();
+        st.pop();
+        cout<<temp->val<<" ";
+       // ans.push(temp->val);
+        if(temp->right) st.push(temp->right);
+        if(temp->left) st.push(temp->left);
+    }
+    cout<<endl;
+}
+
+void iteravtivePostOrderTraversal(Node*root){
+    stack<Node*> st;
+    if(root) st.push(root);
+   while(st.size()>0){
+        Node* temp = st.top();
+        st.pop();
+        cout<<temp->val<<" ";
+       // ans.push(temp->val);
+        if(temp->left) st.push(temp->left);
+        if(temp->right) st.push(temp->right);
+    }
+    cout<<endl;
+}
 Node * construct(int arr[],int n){
     queue<Node*> q;
     Node* root = new Node(arr[0]);
@@ -58,8 +85,10 @@ int main() {
     int arr[] = {1,2,3,4,5,6,INT_MIN,6,INT_MIN,INT_MIN,7,8,9,INT_MIN};
 
      int n = sizeof(arr)/sizeof(arr[0]);
-    Node* root = construct(arr,n);
-       levelOrderQueue(root);
+       Node* root = construct(arr,n);
+       //levelOrderQueue(root);
+       itervativePreOrderTraversal(root);
+       iteravtivePostOrderTraversal(root);
 
    return 0;
 }
