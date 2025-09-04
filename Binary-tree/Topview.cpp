@@ -74,13 +74,17 @@ void minHorLevel(Node* root,int &minLevel,int &maxLevel,int level){
     minHorLevel(root->left,minLevel,maxLevel,level - 1);
     minHorLevel(root->right,minLevel,maxLevel,level + 1);
 }
-void topview(vector<int>& top,Node* root, int level){
+
+void topview(vector<int>& top,Node* root, int level){  // V L R --> R L V
    if(root==NULL) return;
-   if(top[level]==INT_MIN) top[level] = root->val;
-   topview(top,root->left,level-1);
+   if(top[level] == INT_MIN ) top[level] = root->val;
+   topview(top,root->left,level-1); 
    topview(top,root->right,level+1);
+   
 }
+
 int main(){
+    
 
     int arr[] = {
         1,
